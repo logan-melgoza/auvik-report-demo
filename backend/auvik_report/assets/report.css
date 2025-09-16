@@ -1,0 +1,199 @@
+/* Debugging outline (toggle on when needed) */
+/* * { outline: 1px solid red; } */
+
+/* ====== Main Wrapper ====== */
+
+.wrapper {
+    max-width: 850px;
+    padding: 0px 0px;
+    margin: 0 auto;
+}
+
+/* ====== Page Header ====== */
+
+.page-header {
+    width: 850px;
+    font-size: 0px;
+    border-bottom: 2px solid #CBCBCB;
+}
+
+.page-header div {
+    font-size: 16px;
+}
+
+.logo-div,
+.title-name-div,
+.date-div {
+    padding: 0px 0px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title-div,
+.name-div,
+.date-div {
+    text-align: center;
+}
+
+.logo-div {
+    width: 125px;
+}
+
+.title-div {
+    width: 600px;
+}
+
+.date-div {
+    width: 125px;
+    height: 48px;
+    padding-top: 22px;
+}
+
+.logo {
+    width: 100%;
+}
+
+.title,
+.name,
+.date {
+    display: inline-block;
+    margin-bottom: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    color: #009FC3;
+}
+
+.date {
+    font-weight: bold;
+    color: #005696;
+}
+
+/* ====== Report Layout ======*/
+.double-table {
+  display: table; 
+  width: 850px;
+  margin: 0 auto;
+  border-bottom: 2px solid #CBCBCB;
+  border-collapse: collapse;
+}
+
+.report-section {
+  display: table-cell;
+  width: 424px;
+  padding: 16px;
+  font-size: 16px;
+  vertical-align: top;      
+  text-align: center;
+  border-bottom: 2px solid #CBCBCB;
+  box-sizing: border-box;
+}
+
+.uptime-section,
+.alerts-section {
+    border-bottom: 0px;
+}
+
+.bandwidth-section,
+.health-section {
+    width: 850px;
+}
+
+.bandwidth-section h3 {
+    padding-left: 8px;
+}
+
+.table-header.outside {
+    text-align: center;
+    padding-top: 16px;
+}
+
+/* ====== Section Titles ======= */
+.section-title {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #005696;
+}
+
+/* ====== Table styles ====== */
+.data-table {
+    width: 100%;
+    margin: 0 auto;              
+    width: 200px;                
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+.data-table.single-table {
+    width: 818px;
+    table-layout: fixed;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+/* ====== Table Styles ====== */
+.data-table.single-table td,
+.data-table.single-table th {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.data-table th {
+    font-weight: bold;
+    padding: 6px 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.data-table td {
+    padding: 6px 12px;
+    text-align: left;
+}
+
+th.col-num,
+td.num {
+    text-align: center;
+}
+
+.data-table.bandwidth-table th:nth-child(1),
+.data-table.bandwidth-table td:nth-child(1) {
+    width: 20%;   
+}
+
+.data-table.bandwidth-table th:nth-child(6),
+.data-table.bandwidth-table td:nth-child(6) {
+    width: 20%;  
+}
+
+.data-table.bandwidth-table th:nth-child(7),
+.data-table.bandwidth-table td:nth-child(7) {
+    width: 15%; 
+}
+
+.data-table.bandwidth-table th:nth-child(2),
+.data-table.bandwidth-table td:nth-child(2),
+.data-table.bandwidth-table th:nth-child(3),
+.data-table.bandwidth-table td:nth-child(3),
+.data-table.bandwidth-table th:nth-child(4),
+.data-table.bandwidth-table td:nth-child(4),
+.data-table.bandwidth-table th:nth-child(5),
+.data-table.bandwidth-table td:nth-child(5) {
+    width: auto;
+}
+
+/* ====== Helpers ====== */
+
+.vertical-line {
+    display: table-cell;
+    width: 2px;
+    background-color: #CBCBCB;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #CBCBCB;
+    margin: 0px
+}

@@ -1,0 +1,13 @@
+.tenant-list-container {
+    padding: 1rem;
+    width: 550px;
+    border-radius: 0.5rem;
+    background-color: #009FC3;
+    border: 3px solid #ffff;
+}
+
+.tenant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}

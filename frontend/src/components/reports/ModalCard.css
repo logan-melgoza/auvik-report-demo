@@ -1,0 +1,27 @@
+.modal-card {
+    margin-bottom: 0.5rem;
+}
+
+.modal-body__domain {
+    text-align: center;
+}
+
+.modal-body__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.modal-card-button,
+.modal-card-button:hover {
+    border-color: #009FC3;
+    background-color: #009FC3;
+}
+
+.modal-card-button {
+    transition: filter 0.25s ease;
+}
+
+.modal-card-button:hover {
+    filter: brightness(0.90);
+}

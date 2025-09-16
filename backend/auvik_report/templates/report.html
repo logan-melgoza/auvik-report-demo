@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Network Report</title>
+    <link href="{{ assets_dir }}/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ assets_dir }}/report.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="page-header">
+            <div class="logo-div">
+                <img src="{{ assets_dir }}/images/logo.png" alt="Sebastian Corp Logo" class="logo">
+            </div>
+            <div class="title-name-div">
+                <div class="title-div">
+                    <h1 class="title">Network Health Report</h1>
+                </div>
+                <div class="name-div">
+                    <h4 class="name">{{ name }}</h3>
+                </div>
+            </div>
+            <div class="date-div">
+                <p class="date">{{ date }}</p>
+            </div>
+        </div>
+        <div class="double-table">
+            <div class="report-section uptime-section">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="section-title">Uptime Report</h3>
+                    </div>
+                    <div class="table-body">
+                        <table class="data-table uptime-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Device Type</th>
+                                    <th scope="col" class="num">Uptime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for device_type, pct_val in uptime.items() %}
+                                    <tr>
+                                        <td>{{ device_type }}</td>
+                                        <td class="num">{{ pct_val | round(1) }}%</td>
+                                    </tr>
+                                {% else %}
+                                    <tr><td colspan="2">No data</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="report-section alerts-section">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="section-title">Open Alerts</h3>
+                    </div>
+                    <div class="table-body">
+                        <table class="data-table alerts-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Severity</th>
+                                    <th scope="col" class="num">Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for alert_type, alert_count in alerts.items() %}
+                                    <tr>
+                                        <td>{{ alert_type }}</td>
+                                        <td class="num">{{ alert_count }}</td>
+                                    </tr>
+                                {% else %}
+                                    <tr><td colspan="2">No Data</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-header outside">
+            <h3 class="section-title">Bandwidth Report</h3>
+        </div>
+        <table class="data-table single-table bandwidth-table">
+            <thead>
+                <tr>
+                    <th scope="col">Device</th>
+                    <th scope="col">Type</th>
+                    <th scope="col" class="col-num">RX (mb/s)</th>
+                    <th scope="col" class="col-num">TX (mb/s)</th>
+                    <th scope="col" class="col-num">Total (mb/s)</th>
+                    <th scope="col">Top Interface</th>
+                    <th scope="col" class="col-num">Average Utilization</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for device in bandwidth %}
+                    <tr>
+                        <td>{{ device['Device'] }}</td>
+                        <td>{{ device['Type'] }}</td>
+                        <td class="num">{{ device['RX'] | round(2) }}</td>
+                        <td class="num">{{ device['TX'] | round(2) }}</td>
+                        <td class="num">{{ device['Total'] | round(2) }}</td>
+                        <td>{{ device['Top Interface'] }}</td>
+                        <td class="num">{{ device['Average Utilization'] | round(1) }}%</td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="7">No Data</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        <div class="table-header outside">
+            <h3 class="section-title">Device Health</h3>
+        </div>
+        <table class="data-table single-table device-table">
+            <thead>
+                <tr>
+                    <th scope="col">Device</th>
+                    <th scope="col" class="col-num">CPU Utilization</th>
+                    <th scope="col" class="col-num">Memory Utilization</th>
+                    <th scope="col" class="col-num">Storage Utilization</th>
+                    <th scope="col" class="col-num">Health Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for device in health %}
+                    <tr>
+                        <td>{{ device['name'] }}</td>
+                        <td class="num">{{ device['cpu'] }}%</td>
+                        <td class="num">{{ device['memory'] }}%</td>
+                        <td class="num">{{ device['storage'] }}%</td>
+                        <td class="num">{{ device['health'] }}</td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="5">No Data</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</body>
+</html>

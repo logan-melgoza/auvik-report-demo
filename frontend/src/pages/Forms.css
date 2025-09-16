@@ -1,0 +1,40 @@
+.form-title {
+    color:#009FC3;
+}
+
+.register-form {
+    margin-top: 1rem;
+}
+
+.form-label_custom {
+    margin-left: 0.25rem;
+}
+
+.form-button {
+  border-color: #009FC3;
+  background-color: #009FC3;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #007a99; /* slightly darker */
+  border-color: #007a99;
+}
+
+.form-button:active {
+  background-color: #005f73; /* even darker when held down */
+  border-color: #005f73;
+}
+
+.form-button:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.auth-error {
+    color: red;
+    margin-bottom: 1rem;
+}
