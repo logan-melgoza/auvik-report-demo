@@ -52,6 +52,7 @@ Frontend `.env` variables are prefixed with `VITE_` so they can be exposed to th
 ```powershell
 npm install
 npm run dev
+```
 
 ## Backend Overview
 Flask-based backend for the internal Auvik reporting tool.  
