@@ -106,7 +106,8 @@ BASE_URL=https://auvikapi.us2.my.auvik.com
 ## Running Locally
 ```powershell
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\Activate #Windows
+venv/bin/activate #mac/linux
 pip install -r requirements.txt
 waitress-serve --listen=127.0.0.1:5555 app:app
 ```
