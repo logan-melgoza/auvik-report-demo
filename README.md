@@ -109,7 +109,7 @@ python -m venv venv
 venv\Scripts\Activate #Windows
 venv/bin/activate #mac/linux
 pip install -r requirements.txt
-waitress-serve --listen=127.0.0.1:5555 app:app
+python app.py
 ```
 
 ## 📦 Deployment (Windows Server)
